@@ -1,4 +1,4 @@
-import { BillbeeData } from './types/BillbeeData';
-import { BillbeeResponse } from './types/BillbeeResponse';
+import type { BillbeeData } from './types/BillbeeData';
+import type { BillbeeResponse } from './types/BillbeeResponse';
 
-export { BillbeeData, BillbeeResponse };
+export type { BillbeeData, BillbeeResponse };
