@@ -1,0 +1,19 @@
+{
+  "name": "billbee-types",
+  "version": "1.0.0",
+  "description": "billbee types",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/formbench/billbee-types.git"
+  },
+  "author": "formbench",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/formbench/billbee-types/issues"
+  },
+  "homepage": "https://github.com/formbench/billbee-types#readme"
+}
