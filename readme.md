@@ -1,7 +1,7 @@
 # Billbee Types
 
 This repository provides typescript types for use with the responses of the Billbee REST API.
-For documentation of that API go to api [https://www.billbee.io/hilfecenter/api]
+For documentation of that API go to api https://www.billbee.io/hilfecenter/api
 
 To use the types, the need to be manually imported from this package.
 
