@@ -1,5 +1,5 @@
 import type { BillbeeResponse } from "./types/BillbeeResponse";
-import type { BillbeeCustomer, BillbeeCustomerAddress } from "./types/BillbeeCustomer";
+import type { BillbeeCustomer, BillbeeCustomerAddress, FieldStringLiterals } from "./types/BillbeeCustomer";
 import type { BillbeeOrder, StockDictionary, BillbeeOrderStates } from "./types/BillbeeOrder";
 import type {
   BillbeeProduct,
@@ -22,6 +22,7 @@ export type {
   BillbeeResponse,
   BillbeeCustomer,
   BillbeeCustomerAddress,
+  FieldStringLiterals,
   BillbeeOrder,
   StockDictionary,
   BillbeeOrderStates,
