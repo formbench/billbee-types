@@ -1,16 +1,131 @@
+import { BillbeeCustomer } from './BillbeeCustomer';
+import { ShipmentsResponse } from './BillbeeShipments';
+
+interface OrderAdress {
+  BillbeeId: number;
+  FirstName: string;
+  LastName: string;
+  Company: string;
+  NameAddition: string;
+  Street: string;
+  HouseNumber: string;
+  Zip: string;
+  City: string;
+  CountryISO2: string;
+  Country: string;
+  Line2: string;
+  Email: string;
+  State: string;
+  Phone: string;
+}
+
+interface OrderComment {
+  Id: number;
+  FromCustomer: boolean;
+  Text: string;
+  Name: string;
+  Created: string;
+}
+
+interface OrderProductImage {
+  Url: string;
+  IsDefaultImage: boolean;
+  Position: number;
+  ExternalId: string;
+}
+
+interface OrderProduct {
+  OldId: string;
+  Id: string;
+  Title: string;
+  Weight: number;
+  SKU: string;
+  SkuOrId: string;
+  IsDigital: boolean;
+  Images: OrderProductImage[];
+  EAN: string;
+  PlatformData: string;
+  TARICCode: string;
+  CountryOfOrigin: string;
+  BillbeeId: number;
+}
+
+interface OrderItemAttribute {
+  Id: string;
+  Name: string;
+  Value: string;
+  Price: number;
+}
+
+interface OrderItem {
+  BillbeeId: number;
+  TransactionId: string;
+  Product: OrderProduct;
+  Quantity: number;
+  TotalPrice: number;
+  TaxAmount: number;
+  TaxIndex: number;
+  Discount: number;
+  Attributes: OrderItemAttribute[];
+  GetPriceFromArticleIfAny: boolean;
+  IsCoupon: boolean;
+  ShippingProfileId: string;
+  DontAdjustStock: boolean;
+  UnrebatedTotalPrice: number;
+  SerialNumber: string;
+}
+
+interface OrderChannel {
+  Platform: string;
+  BillbeeShopName: string;
+  BillbeeShopId: number;
+  Id: string;
+  Nick: string;
+  FirstName: string;
+  LastName: string;
+  FullName: string;
+  Email: string;
+}
+
+interface OrderShippingServices {
+  DisplayName: string;
+  DisplayValue: string;
+  RequiresUserInput: boolean;
+  ServiceName: string;
+  typeName: string;
+  PossibleValueLists: {
+    key: string;
+    value: {
+      key: number;
+      value: string;
+    }[];
+  }[];
+  CanBeConfigured: boolean;
+}
+
+interface OrderHistory {
+  Created: string;
+  EventTypeName: string;
+  Text: string;
+  EmployeeName: string;
+  TypeId: number;
+}
+
+interface OrderPayment {
+  BillbeeId: number;
+  TransactionId: string;
+  PayDate: string;
+  PaymentType: number;
+  SourceTechnology: string;
+  SourceText: string;
+  PayValue: number;
+  Purpose: string;
+  Name: number;
+}
+
 export interface BillbeeOrder {
   RebateDifference: number;
-  ShippingIds: {
-    BillbeeId: number;
-    ShippingId: string;
-    Shipper: string;
-    Created: string;
-    TrackingUrl: string;
-    ShippingProviderId: number;
-    ShippingProviderProductId: number;
-    ShippingCarrier: number;
-    ShipmentType: number;
-  }[];
+  ShippingIds: ShipmentsResponse[];
   AcceptLossOfReturnRight: boolean;
   Id: string;
   OrderNumber: string;
@@ -21,120 +136,22 @@ export interface BillbeeOrder {
   ConfirmedAt: string;
   PayedAt: string;
   SellerComment: string;
-  Comments: {
-    Id: number;
-    FromCustomer: boolean;
-    Text: string;
-    Name: string;
-    Created: string;
-  }[];
+  Comments: OrderComment[];
   InvoiceNumberPrefix: string;
   InvoiceNumberPostfix: string;
   InvoiceNumber: number;
   InvoiceDate: string;
-  InvoiceAddress: {
-    BillbeeId: number;
-    FirstName: string;
-    LastName: string;
-    Company: string;
-    NameAddition: string;
-    Street: string;
-    HouseNumber: string;
-    Zip: string;
-    City: string;
-    CountryISO2: string;
-    Country: string;
-    Line2: string;
-    Email: string;
-    State: string;
-    Phone: string;
-  };
-  ShippingAddress: {
-    BillbeeId: number;
-    FirstName: string;
-    LastName: string;
-    Company: string;
-    NameAddition: string;
-    Street: string;
-    HouseNumber: string;
-    Zip: string;
-    City: string;
-    CountryISO2: string;
-    Country: string;
-    Line2: string;
-    Email: string;
-    State: string;
-    Phone: string;
-  };
+  InvoiceAddress: OrderAdress;
+  ShippingAddress: OrderAdress;
   PaymentMethod: number;
   ShippingCost: number;
   TotalCost: number;
   AdjustmentCost: number;
   AdjustmentReason: string;
-  OrderItems: {
-    BillbeeId: number;
-    TransactionId: string;
-    Product: {
-      OldId: string;
-      Id: string;
-      Title: string;
-      Weight: number;
-      SKU: string;
-      SkuOrId: string;
-      IsDigital: boolean;
-      Images: {
-        Url: string;
-        IsDefaultImage: boolean;
-        Position: number;
-        ExternalId: string;
-      }[];
-      EAN: string;
-      PlatformData: string;
-      TARICCode: string;
-      CountryOfOrigin: string;
-      BillbeeId: number;
-    };
-    Quantity: number;
-    TotalPrice: number;
-    TaxAmount: number;
-    TaxIndex: number;
-    Discount: number;
-    Attributes: {
-      Id: string;
-      Name: string;
-      Value: string;
-      Price: number;
-    }[];
-    GetPriceFromArticleIfAny: boolean;
-    IsCoupon: boolean;
-    ShippingProfileId: string;
-    DontAdjustStock: boolean;
-    UnrebatedTotalPrice: number;
-    SerialNumber: string;
-  }[];
+  OrderItems: OrderItem[];
   Currency: string;
-  Seller: {
-    Platform: string;
-    BillbeeShopName: string;
-    BillbeeShopId: number;
-    Id: string;
-    Nick: string;
-    FirstName: string;
-    LastName: string;
-    FullName: string;
-    Email: string;
-  };
-  Buyer: {
-    Platform: string;
-    BillbeeShopName: string;
-    BillbeeShopId: number;
-    Id: string;
-    Nick: string;
-    FirstName: string;
-    LastName: string;
-    FullName: string;
-    Email: string;
-  };
+  Seller: OrderChannel;
+  Buyer: OrderChannel;
   UpdatedAt: string;
   TaxRate1: number;
   TaxRate2: number;
@@ -159,59 +176,13 @@ export interface BillbeeOrder {
   CustomInvoiceNote: string;
   CustomerNumber: string;
   PaymentReference: string;
-  ShippingServices: {
-    DisplayName: string;
-    DisplayValue: string;
-    RequiresUserInput: boolean;
-    ServiceName: string;
-    typeName: string;
-    PossibleValueLists: {
-      key: string;
-      value: {
-        key: number;
-        value: string;
-      }[];
-    }[];
-    CanBeConfigured: boolean;
-  }[];
-  Customer: {
-    Id: number;
-    Name: string;
-    Email: string;
-    Tel1: string;
-    Tel2: string;
-    Number: number;
-    PriceGroupId: number;
-    LanguageId: number;
-    VatId: string;
-    Type: number;
-  };
-  History: {
-    Created: string;
-    EventTypeName: string;
-    Text: string;
-    EmployeeName: string;
-    TypeId: number;
-  }[];
-  Payments: {
-    BillbeeId: number;
-    TransactionId: string;
-    PayDate: string;
-    PaymentType: number;
-    SourceTechnology: string;
-    SourceText: string;
-    PayValue: number;
-    Purpose: string;
-    Name: number;
-  }[];
+  ShippingServices?: OrderShippingServices[];
+  Customer: BillbeeCustomer;
+  History: OrderHistory[];
+  Payments: OrderPayment[];
   LastModifiedAt: string;
 }
 
-export interface StockDictionary {
-  [sku: string]: number;
-}
-
-// eslint-disable-next-line no-shadow
 export enum BillbeeOrderStates {
   Bestellt = 1,
   Bestaetigt,
@@ -228,5 +199,5 @@ export enum BillbeeOrderStates {
   Gepackt,
   Angeboten,
   Zahlungserinnerung,
-  Im_Fulfillment
+  Im_Fulfillment,
 }

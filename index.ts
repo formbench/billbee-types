@@ -1,30 +1,31 @@
-import type { BillbeeResponse } from "./types/BillbeeResponse";
-import type { BillbeeCustomer, BillbeeCustomerAddress, FieldStringLiterals } from "./types/BillbeeCustomer";
-import type { BillbeeOrder, StockDictionary, BillbeeOrderStates } from "./types/BillbeeOrder";
+import type { BillbeeCustomer } from './types/BillbeeCustomer';
+import type {
+  BillbeeCustomerAddress,
+  BillbeeCustomerAddressPatchBody,
+} from './types/BillbeeCustomerAddress';
+import type { BillbeeOrder, BillbeeOrderStates } from './types/BillbeeOrder';
 import type {
   BillbeeProduct,
-  ReservedAmount,
   CustomField,
+  ImagesDeleteResponse,
   ProductImage,
+  ReservedAmount,
   UpdateStockResponse,
-  ImagesDeleteResponse
-} from "./types/BillbeeProduct";
-import type { BillbeeSearchResults } from "./types/BillbeeSearch";
+} from './types/BillbeeProduct';
+import type { BillbeeResponse } from './types/BillbeeResponse';
+import type { BillbeeSearchResults } from './types/BillbeeSearch';
 import type {
+  ShipmentsResponse,
+  ShippingCarrier,
   ShippingProvider,
   ShippingProviderProduct,
-  ShippingCarrier,
-  ShipmentsResponse,
-  ShipWithLabelResponse
-} from "./types/BillbeeShipments";
+  ShipWithLabelResponse,
+} from './types/BillbeeShipments';
 
 export type {
   BillbeeResponse,
   BillbeeCustomer,
-  BillbeeCustomerAddress,
-  FieldStringLiterals,
   BillbeeOrder,
-  StockDictionary,
   BillbeeOrderStates,
   BillbeeProduct,
   ReservedAmount,
@@ -37,5 +38,7 @@ export type {
   ShippingProviderProduct,
   ShippingCarrier,
   ShipmentsResponse,
-  ShipWithLabelResponse
+  ShipWithLabelResponse,
+  BillbeeCustomerAddress,
+  BillbeeCustomerAddressPatchBody,
 };

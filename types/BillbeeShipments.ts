@@ -1,13 +1,13 @@
-export interface ShippingProvider {
-  id: number;
-  name: string;
-  products: ShippingProviderProduct[];
-}
-
 export interface ShippingProviderProduct {
   id: number;
   displayName: string;
   productName: string;
+}
+
+export interface ShippingProvider {
+  id: number;
+  name: string;
+  products: ShippingProviderProduct[];
 }
 
 export interface ShippingCarrier {
