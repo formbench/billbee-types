@@ -3,7 +3,7 @@ import type {
   BillbeeCustomerAddress,
   BillbeeCustomerAddressPatchBody,
 } from './types/BillbeeCustomerAddress';
-import type { BillbeeOrder, BillbeeOrderStates } from './types/BillbeeOrder';
+import type { BillbeeOrder, BillbeeOrderState } from './types/BillbeeOrder';
 import type {
   BillbeeProduct,
   CustomField,
@@ -26,7 +26,7 @@ export type {
   BillbeeResponse,
   BillbeeCustomer,
   BillbeeOrder,
-  BillbeeOrderStates,
+  BillbeeOrderState,
   BillbeeProduct,
   ReservedAmount,
   CustomField,

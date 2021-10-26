@@ -14,7 +14,7 @@ Provided types are:
 ## Orders Endpoint
 
 - BillbeeOrder
-- BillbeeOrderStates
+- BillbeeOrderState
 
 ## Products Endpoint
 

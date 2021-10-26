@@ -183,7 +183,7 @@ export interface BillbeeOrder {
   LastModifiedAt: string;
 }
 
-export enum BillbeeOrderStates {
+export enum BillbeeOrderState {
   Bestellt = 1,
   Bestaetigt,
   Zahlung_erhalten,
