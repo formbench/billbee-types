@@ -7,7 +7,7 @@ interface ProductSource {
   ApiAccountName: string;
   ApiAccountId: number;
   ExportFactor: number;
-  StockSyncInactive: true;
+  StockSyncInactive: boolean;
   StockSyncMin: number;
   StockSyncMax: number;
   UnitsPerItem: number;
