@@ -1,4 +1,4 @@
-import { BillbeeLocalizedString } from './BillbeeLocalizedString';
+import { BillbeeLocalizedString } from "./BillbeeLocalizedString";
 
 interface ProductSource {
   Id: number;
@@ -101,7 +101,7 @@ export interface BillbeeProduct {
   Sources: ProductSource[];
   Weight: number;
   WeightNet: number;
-  LowStock: true;
+  LowStock: boolean;
   StockCode: string;
   StockReduceItemsPerSale: number;
   Stocks: ProductStock[];
@@ -118,8 +118,8 @@ export interface BillbeeProduct {
   SoldSumGrossLast30Days: number;
   SoldAmountLast30Days: number;
   ShippingProductId: number;
-  IsDigital: true;
-  IsCustomizable: true;
+  IsDigital: boolean;
+  IsCustomizable: boolean;
   DeliveryTime: number;
   Recipient: number;
   Occasion: number;
