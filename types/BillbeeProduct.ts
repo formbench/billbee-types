@@ -125,6 +125,7 @@ export interface BillbeeProduct {
   Occasion: number;
   CountryOfOrigin: string;
   ExportDescription: string;
+  ExportDescriptionMultiLanguage: string;
   TaricNumber: string;
   Condition: number;
   WidthCm: number;
