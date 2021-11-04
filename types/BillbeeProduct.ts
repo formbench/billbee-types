@@ -1,4 +1,4 @@
-import { BillbeeLocalizedString } from "./BillbeeLocalizedString";
+import { BillbeeLocalizedString } from './BillbeeLocalizedString';
 
 interface ProductSource {
   Id: number;
@@ -125,7 +125,7 @@ export interface BillbeeProduct {
   Occasion: number;
   CountryOfOrigin: string;
   ExportDescription: string;
-  ExportDescriptionMultiLanguage: string;
+  ExportDescriptionMultiLanguage: BillbeeLocalizedString[];
   TaricNumber: string;
   Condition: number;
   WidthCm: number;
