@@ -24,7 +24,7 @@ interface ProductStock {
   StockDesired: 0;
 }
 
-interface ProductCategory {
+export interface ProductCategory {
   Name: string;
   Id: number;
 }
