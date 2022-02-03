@@ -26,7 +26,7 @@ interface ProductStock {
 
 interface ProductCategory {
   Name: string;
-  Id: 0;
+  Id: number;
 }
 
 interface ProductBillOfMaterialItem {
