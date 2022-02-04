@@ -1,7 +1,7 @@
 import { BillbeeCustomer } from './BillbeeCustomer';
 import { ShipmentsResponse } from './BillbeeShipments';
 
-interface OrderAdress {
+interface OrderAddress {
   BillbeeId: number;
   FirstName: string;
   LastName: string;
@@ -141,8 +141,8 @@ export interface BillbeeOrder {
   InvoiceNumberPostfix: string;
   InvoiceNumber: number;
   InvoiceDate: string;
-  InvoiceAddress: OrderAdress;
-  ShippingAddress: OrderAdress;
+  InvoiceAddress: OrderAddress;
+  ShippingAddress: OrderAddress;
   PaymentMethod: number;
   ShippingCost: number;
   TotalCost: number;
