@@ -1,11 +1,11 @@
-interface SearchResultsProduct {
+export interface SearchResultsProduct {
   Id: number;
   ShortText: string;
   SKU: string;
   Tags: string;
 }
 
-interface SearchResultsOrder {
+export interface SearchResultsOrder {
   Id: number;
   ExternalReference: string;
   BuyerName: string;
@@ -14,7 +14,7 @@ interface SearchResultsOrder {
   ArticleTexts: string;
 }
 
-interface SearchResultsCustomer {
+export interface SearchResultsCustomer {
   Id: number;
   Name: string;
   Addresses: string;
