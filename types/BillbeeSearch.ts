@@ -1,11 +1,11 @@
-export interface BillbeeSearchResultsProduct {
+export interface SearchResultsProduct {
   Id: number;
   ShortText: string;
   SKU: string;
   Tags: string;
 }
 
-export interface BillbeeSearchResultsOrder {
+export interface SearchResultsOrder {
   Id: number;
   ExternalReference: string;
   BuyerName: string;
@@ -14,7 +14,7 @@ export interface BillbeeSearchResultsOrder {
   ArticleTexts: string;
 }
 
-export interface BillbeeSearchResultsCustomer {
+export interface SearchResultsCustomer {
   Id: number;
   Name: string;
   Addresses: string;
@@ -22,7 +22,7 @@ export interface BillbeeSearchResultsCustomer {
 }
 
 export interface BillbeeSearchResults {
-  Products: BillbeeSearchResultsProduct[];
-  Orders: BillbeeSearchResultsOrder[];
-  Customers: BillbeeSearchResultsCustomer[];
+  Products: SearchResultsProduct[];
+  Orders: SearchResultsOrder[];
+  Customers: SearchResultsCustomer[];
 }

@@ -16,9 +16,9 @@ import type {
 import type { BillbeeResponse } from './types/BillbeeResponse';
 import type {
   BillbeeSearchResults,
-  BillbeeSearchResultsCustomer,
-  BillbeeSearchResultsOrder,
-  BillbeeSearchResultsProduct,
+  SearchResultsCustomer,
+  SearchResultsOrder,
+  SearchResultsProduct,
 } from './types/BillbeeSearch';
 import type {
   ShipmentsResponse,
@@ -40,9 +40,9 @@ export type {
   UpdateStockResponse,
   ImagesDeleteResponse,
   BillbeeSearchResults,
-  BillbeeSearchResultsCustomer,
-  BillbeeSearchResultsOrder,
-  BillbeeSearchResultsProduct,
+  SearchResultsCustomer,
+  SearchResultsOrder,
+  SearchResultsProduct,
   ShippingProvider,
   ShippingProviderProduct,
   ShippingCarrier,
