@@ -55,6 +55,7 @@ if (!choices.includes(versionType)) {
   await $`yarn version --new-version ${next} --no-git-tag-version`;
   await $`git add package.json && git commit --amend --no-edit`;
   await $`git push --force-with-lease`;
+  await $`npm publish`;
 
   await $`gh release create v${next}`;
   console.log('');
