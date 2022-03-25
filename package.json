@@ -1,10 +1,11 @@
 {
   "name": "billbee-types",
-  "version": "1.5.5",
+  "version": "1.6.0",
   "description": "billbee types",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "./scripts/release.mjs"
   },
   "repository": {
     "type": "git",
