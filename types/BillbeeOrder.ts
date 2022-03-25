@@ -109,6 +109,22 @@ interface OrderHistory {
   Text: string;
   EmployeeName: string;
   TypeId: number;
+  VatFlags?: VatFlags;
+}
+
+interface VatFlags {
+  ThirdPartyCountry: boolean;
+  SrcCountryIsEqualToDstCountry: boolean;
+  CustomerHasVatId: boolean;
+  EuDeliveryThresholdExceeded: boolean;
+  OssEnabled: boolean;
+  SellerIsRegisteredInDstCountry: boolean;
+  OrderDistributionCountryIsEmpty: boolean;
+  UserProfileCountryIsEmpty: boolean;
+  SetIglWhenVatIdIsAvailableEnabled: boolean;
+  RatesFrom: string;
+  VatIdFrom: string;
+  IsDistanceSale: boolean;
 }
 
 interface OrderPayment {
