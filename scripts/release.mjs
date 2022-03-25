@@ -58,10 +58,6 @@ if (!choices.includes(versionType)) {
 
   await $`gh release create v${next}`;
   console.log('');
-
-  console.log(`Watch workflow:`);
-  console.log(`gh run watch --repo billbee-types`);
-
   console.log('------------------------');
   console.log(`Created release ${next}`);
   console.log('------------------------\n');
