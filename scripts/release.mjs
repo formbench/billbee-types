@@ -28,6 +28,8 @@ console.log(
 );
 console.log('------------------------------------------------\n');
 
+await $`git pull --rebase`;
+
 let versionType = await question('What version type? (major, minor, patch) ', {
   choices,
 });
@@ -49,6 +51,7 @@ if (!choices.includes(versionType)) {
   let currentVersion = (await $`echo $(gh release list) | cut -d' ' -f1`)
     .stdout;
   let next = getNextRelease({ versionType }, currentVersion);
+
   await $`yarn version --new-version ${next} --no-git-tag-version`;
   await $`git add package.json && git commit --amend --no-edit`;
   await $`git push --force-with-lease`;
