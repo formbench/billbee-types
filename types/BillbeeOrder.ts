@@ -73,6 +73,7 @@ interface OrderItem {
   DontAdjustStock: boolean;
   UnrebatedTotalPrice: number;
   SerialNumber: string;
+  InvoiceSKU: string;
 }
 
 interface OrderChannel {
