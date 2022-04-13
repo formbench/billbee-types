@@ -1,6 +1,6 @@
 {
   "name": "billbee-types",
-  "version": "1.6.2",
+  "version": "1.8.0",
   "description": "billbee types",
   "main": "index.ts",
   "scripts": {
