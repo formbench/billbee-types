@@ -198,6 +198,11 @@ export interface BillbeeOrder {
   History: OrderHistory[];
   Payments: OrderPayment[];
   LastModifiedAt: string;
+  ApiAccountId: string;
+  ApiAccountName: string;
+  MerchantVatId: string;
+  CustomerVatId: string;
+  IsFromBillbeeApi: boolean;
 }
 
 export enum BillbeeOrderState {
