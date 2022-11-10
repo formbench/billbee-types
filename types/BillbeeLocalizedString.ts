@@ -1,4 +1,4 @@
 export interface BillbeeLocalizedString {
-  Text: string;
+  Text?: string | null;
   LanguageCode: string;
 }
