@@ -133,4 +133,5 @@ export interface BillbeeProduct {
   HeightCm: number;
   BillOfMaterial: ProductBillOfMaterialItem[];
   CustomFields: ProductCustomField[];
+  IsDeactivated: boolean;
 }
