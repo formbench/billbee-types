@@ -2,10 +2,19 @@
   "name": "billbee-types",
   "version": "1.12.0",
   "description": "billbee types",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "./scripts/release.mjs && npm publish"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "typescript": "^5.0.0"
   },
   "repository": {
     "type": "git",
