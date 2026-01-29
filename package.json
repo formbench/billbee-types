@@ -1,6 +1,6 @@
 {
   "name": "billbee-types",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "description": "billbee types",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,7 +8,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "./scripts/release.mjs && npm publish"
+    "release": "./scripts/release.mjs && sleep 5 && gh run watch"
   },
   "files": [
     "dist"
