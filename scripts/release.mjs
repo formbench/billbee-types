@@ -52,7 +52,7 @@ if (!choices.includes(versionType)) {
     .stdout;
   let next = getNextRelease({ versionType }, currentVersion);
 
-  await $`yarn version --new-version ${next} --no-git-tag-version`;
+  await $`pnpm version ${next} --no-git-tag-version`;
   await $`git add package.json && git commit --amend --no-edit`;
   await $`git push --force-with-lease`;
 
